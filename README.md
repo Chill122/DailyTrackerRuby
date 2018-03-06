@@ -53,3 +53,5 @@ before_action :require_permission, only: [:show, :edit]
   validates_length_of :description, :maximum => 150
   
   CSS AND LOOKS (bootstrap)
+  
+  ADDED BUTTONS FOR FUNCTIONALITY
