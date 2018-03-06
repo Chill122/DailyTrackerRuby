@@ -58,7 +58,7 @@ before_action :require_permission, only: [:show, :edit]
   end
   ```
   
-  //INDEX (Shows only the trackers that you created)
+  INDEX (Shows only the trackers that you created)
   
   ```
   def index
