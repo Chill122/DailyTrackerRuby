@@ -5,7 +5,6 @@ LOGIN AND DATABASE (devise and all the listed items below)
 ```
 Install devise
 
-
 rails g scaffold tracker name:string description:text
 rails g migration add_counter_to_tracker counter:integer
 rails g migration add_check_date_to_tracker date_check:datetime
