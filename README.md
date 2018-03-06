@@ -10,7 +10,12 @@ rails g migration add_counter_to_tracker counter:integer
 rails g migration add_check_date_to_tracker date_check:datetime
 rails g migration add_user_to_tracker
 ```
+ADDED belongs_to and has_many to tracker.rb and user.rb
+```
+belongs_to :user
 
+has_many :trackers
+```
 DONE BUTTON (When you click it it goes to def count)
 
 ```
