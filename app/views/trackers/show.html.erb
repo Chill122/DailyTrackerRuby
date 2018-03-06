@@ -1,0 +1,30 @@
+<% if notice %>
+    <p id="notice" class="alert alert-success"><%= notice %></p>
+<% end %>
+<div class="form-control">
+<p>
+  <strong>Days done:</strong>
+  <%= @tracker.counter %> / <%= (Date.today.to_date - @tracker.created_at.to_date).to_i + 1 %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tracker.Name %>
+</p>
+<p>
+  <strong>Created on:</strong>
+  <%= @tracker.created_at %>
+</p>
+
+<p>
+  <strong>Last time done:</strong>
+  <%= @tracker.date_check %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @tracker.description %>
+</p>
+</div>
+
+<%= link_to 'Edit', edit_tracker_path(@tracker), :class => 'btn btn-default' %> |
+<%= link_to 'Back', trackers_path, :class => 'btn btn-default' %>

@@ -1,0 +1,40 @@
+<% if notice %>
+    <p id="notice" class="alert alert-success"><%= notice %></p>
+<% end %>
+
+<h1>My habits</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Days done</th>
+      <th>Name</th>
+      <th>Created</th>
+      <th>Last time done</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trackers.each do |tracker| %>
+      <tr>
+        <td><%= tracker.counter %> / <%= (Date.today.to_date - tracker.created_at.to_date).to_i + 1%></td>
+        <td><%= tracker.Name %></td>
+        <td><%= tracker.created_at.to_date %></td>
+        <td><%= tracker.date_check %></td>
+        <td style="text-align: right">
+        <%= link_to 'Show', tracker, :class => 'btn btn-default' %>
+        <%= link_to 'Edit', edit_tracker_path(tracker), :class => 'btn btn-default' %>
+        <% if tracker.date_check != Date.today %>
+            <%= link_to 'Done', count_tracker_path(tracker), { :style=>'color:#FFFFFF;', :class => 'btn btn-success' } %>
+        <% end %>
+        <%= link_to 'Delete', tracker, method: :delete, data: { confirm: 'Are you sure?' }, :style=>'color:#FFFFFF;', :class=>'btn btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tracker', new_tracker_path, { :style=>'color:#FFFFFF;', :class => 'btn btn-primary' } %>
