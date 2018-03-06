@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Counter: 1
+  Name: MyString
+  Schedule: 2018-03-02 17:39:56
+
+two:
+  Counter: 1
+  Name: MyString
+  Schedule: 2018-03-02 17:39:56
